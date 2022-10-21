@@ -1,0 +1,67 @@
+html {
+    max-width: 150ch;
+    padding: 3em 1em;
+    margin: auto;
+  }
+
+  .message{
+    background: #eee; 
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-bottom: 7px;
+    margin-top: 10px;
+    padding: 8px;
+    font-size: 1.25rem;
+  }
+
+  .field {
+    width: 90%;
+    height: 36px;
+    font-size: 1.25rem;
+    border-radius: 4px;
+    position: relative;
+    background-color: rgba(255,255,255,0.3);
+    transition: 0.3s all;
+  }
+  .field:hover {
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .button {
+    position: relative;
+    top: 3px;
+    left: 5px;
+    background-color: #8480f9;
+    border: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    padding: 7px;
+    width: 9%;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .button:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+  
+  .button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }

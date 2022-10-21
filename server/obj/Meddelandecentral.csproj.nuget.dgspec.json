@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ly/Desktop/Meddelandecentral/server/Meddelandecentral/Meddelandecentral.csproj": {}
+    "/Users/ly/Desktop/Meddelandecentral/server/Meddelandecentral.csproj": {}
   },
   "projects": {
-    "/Users/ly/Desktop/Meddelandecentral/server/Meddelandecentral/Meddelandecentral.csproj": {
+    "/Users/ly/Desktop/Meddelandecentral/server/Meddelandecentral.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ly/Desktop/Meddelandecentral/server/Meddelandecentral/Meddelandecentral.csproj",
+        "projectUniqueName": "/Users/ly/Desktop/Meddelandecentral/server/Meddelandecentral.csproj",
         "projectName": "Meddelandecentral",
-        "projectPath": "/Users/ly/Desktop/Meddelandecentral/server/Meddelandecentral/Meddelandecentral.csproj",
+        "projectPath": "/Users/ly/Desktop/Meddelandecentral/server/Meddelandecentral.csproj",
         "packagesPath": "/Users/ly/.nuget/packages/",
-        "outputPath": "/Users/ly/Desktop/Meddelandecentral/server/Meddelandecentral/obj/",
+        "outputPath": "/Users/ly/Desktop/Meddelandecentral/server/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ly/.nuget/NuGet/NuGet.Config"
@@ -38,9 +38,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[6.4.0, )"
             }
           },
           "imports": [
