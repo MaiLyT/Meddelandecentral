@@ -4,11 +4,11 @@ namespace Meddelandecentral.Models
 {
     public class ChatMessage
     {
-        // [Key]
-        // public Guid Id { get; set; }
+        [Key]
+        public Guid Id { get; set; }
         [Required]
-        public string User { get; set; } 
+        public string? User { get; set; } 
         [Required]
-        public string Message { get; set; }
+        public string? Message { get; set; }
     }
 }

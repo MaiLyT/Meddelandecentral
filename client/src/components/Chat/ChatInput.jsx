@@ -1,27 +1,26 @@
-import  React, {useState}  from 'react'
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+import  React, {useContext, useState, useRef}  from 'react'
+import { AppContext } from '../../Data';
 
-export default function ChatInput(props){
+export default function ChatInput(){
     let savedUsername = localStorage.getItem('username');
     let initUsername = savedUsername !== null ? localStorage.getItem('username'):'';
     const [user, setUser] = useState(initUsername);
     const [message, setMessage] = useState('');
 
+    const {sendMessage} = useContext(AppContext);
+
     const isUserProvided = user && user !== '';
+
     const onSubmit = (e) => {
         e.preventDefault();
-
-        //const isUserProvided = user && user !== '';
         const isMessageProvided = message && message !== '';
 
         if(isUserProvided && isMessageProvided){
-            props.sendMessage(user, message);
+            sendMessage(user, message);
             setMessage('');
         }else{
             alert('Pls insert an user and a message');
         }
-
     }
     const onUserUpdate = (e) => {
         let currentname = e.target.value
@@ -35,19 +34,19 @@ export default function ChatInput(props){
 
     return (
         <form onSubmit={onSubmit}>
-        {!isUserProvided && <>
-                <label htmlFor='user'>User:</label>
-                <br />
-                <input 
-                    id='user'
-                    name='user'
-                    value = {user}
-                    onChange ={onUserUpdate} />
-                <br />
-            </>}
+            <label htmlFor="user">User:</label>
+            <br />
+            <input 
+                placeholder='User name'
+                id='user'
+                name='user'
+                value = {user}
+                onChange ={onUserUpdate} />
+            <br />
             
-            <input
+            <input autoFocus
                 className='field'
+                placeholder='  Message'
                 label="Message" 
                 type='text'
                 id='message'

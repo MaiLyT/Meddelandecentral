@@ -1,7 +1,11 @@
+/* Original Floor Plan here: https://codepen.io/oliviale/pen/moLrBq?editors=1100 */
+/* change #FFF to #F5F5F7 */
+
 body {
-    background: #fff;
+    background: #F5F5F7;
     font-family: "Poppins", sans-serif;
 }
+
 
 .main-content {
     margin: 6em auto;
@@ -11,6 +15,7 @@ body {
     border: 4px solid #096b72;
     border-width: 4px 0 0 4px;
     position: relative;
+    color: #F5F5F7;
 }
 .main-content > div {
     position: relative;
@@ -19,57 +24,57 @@ body {
     top: -4px;
     left: 15px;
 }
-.room-6 {
+.room-1 {
     grid-column: 1 / span 2;
     grid-row: 1 / span 2;
     border: 4px solid #096b72;
     border-width: 0 4px 4px 0;
 }
-.room-6 .door-hor {
+.room-1 .door-hor {
     bottom: -34px;
     left: 48px;
 }
-.room-6 .window-hor {
+.room-1 .window-hor {
     left: 35px;
 }
-.room-4 {
-    grid-column: 3 / span 2;
-    grid-row: 1 / span 2;
-    border: 4px solid #096b72;
-    border-width: 0 4px 4px 0;
-}
-.room-4 .door-hor {
-    bottom: -34px;
-    left: 95px;
-}
-.room-4 .window-hor {
-    left: 40px;
-    width: 140px;
-}
 .room-2 {
-    grid-column: 5 / span 2;
+    grid-column: 3 / span 2;
     grid-row: 1 / span 2;
     border: 4px solid #096b72;
     border-width: 0 4px 4px 0;
 }
 .room-2 .door-hor {
     bottom: -34px;
-    left: 58px;
+    left: 95px;
 }
 .room-2 .window-hor {
     left: 40px;
+    width: 140px;
 }
-.room-conference {
+.room-3 {
+    grid-column: 5 / span 2;
+    grid-row: 1 / span 2;
+    border: 4px solid #096b72;
+    border-width: 0 4px 4px 0;
+}
+.room-3 .door-hor {
+    bottom: -34px;
+    left: 58px;
+} 
+.room-3 .window-hor {
+    left: 40px;
+}
+.room-6 {
     grid-column: 7 / span 1;
     grid-row: 1 / span 2;
     border: 4px solid #096b72;
     border-width: 0 4px 4px 0px;
 }
-.room-conference .door-hor {
+.room-6 .door-hor {
     bottom: -34px;
     left: 28px;
 }
-.room-conference .window-hor {
+.room-6 .window-hor {
     left: 20px;
     width: 170px;
 }
@@ -84,51 +89,118 @@ body {
     border: 4px solid #096b72;
     border-width: 0 4px 0 0;
 }
-.room-v1 {
+
+.corridor .window-hor {
+    left: 30px;
+    top: auto;
+    bottom: -6px;
+    width: 200px;
+}
+.room-4 {
     grid-column: 1 / span 2;
     grid-row: 4 / span 2;
     border: 4px solid #096b72;
     border-width: 4px 4px 4px 0;
 }
-.room-v1 .door-hor {
+.room-4 .door-hor {
     top: -4px;
     left: 70px;
 }
-.room-v1 .window-hor {
+.room-4 .window-hor {
     left: 30px;
     top: auto;
     bottom: -6px;
 }
-.room-v2 {
+.room-5 {
     grid-column: 3 / span 2;
     grid-row: 4 / span 2;
     border: 4px solid #096b72;
     border-width: 4px 4px 4px 0;
 }
-.room-v2 .door-hor {
+.room-5 .door-hor {
     top: -4px;
     left: 90px;
 }
-.room-v2 .window-hor {
+.room-5 .window-hor {
     left: 65px;
     top: auto;
     bottom: -6px;
 }
-.room-v3 {
+
+.reception{
     grid-column: 5 / span 2;
     grid-row: 4 / span 2;
     border: 4px solid #096b72;
-    border-width: 4px 4px 4px 0;
+    border-width: 0px 0px 4px 0;
 }
-.room-v3 .door-hor {
-    top: -4px;
-    left: 70px;
+
+.reception .name {
+    left: 10px;
+    top: 10px;
+    transform: rotate(0deg);
 }
-.room-v3 .window-hor {
-    left: 30px;
-    top: auto;
-    bottom: -6px;
+
+.reception-chair {
+    width: 34px;
+    height: 26px;
+    bottom: 40px;
+    left: 80px;
+    border-radius: 20px 20px 0 0;
+    position: absolute;
+    border: 2px solid #096b72;
+    background: #ffc107;
+    z-index: 25;
+    transform: rotate(135deg);
 }
+.reception-chair:before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 82%;
+    border-radius: inherit;
+    background: #fff;
+    bottom: 0;
+    left: 10%;
+    border: 1px solid #096b72;
+    border-width: 1px 1px 0;
+}
+.reception-chair:nth-child(3) {
+    transform: rotate(45deg);
+    top: 50px;
+    left: 80px;
+}
+
+.reception .rug {
+    width: 150px;
+    height: 220px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: rgba(255, 193, 7, 0.25);
+}
+
+.table {
+    width: 90px;
+    height: 15px;
+    bottom: 95px;
+    left: -5px;
+    position: absolute;
+    border: 2px solid #096b72;
+    transform: rotate(-90deg);
+}
+.table:before {
+    content: "";
+    position: absolute;
+    border: 2px solid #096b72;
+    width: 20px;
+    height: 16px;
+    top: -20px;
+    left: 50%;
+    margin-left: -10px;
+    border-radius: 40px 40px 0 0;
+    background: linear-gradient(to bottom, transparent 0, transparent 50%, #096b72 50%, #096b72 60%, transparent 60%);
+}
+
 .patio {
     grid-row: 4 / span 2;
     grid-column: 7 / span 1;
@@ -173,7 +245,7 @@ body {
 }
 .door-hor {
     position: absolute;
-    background: #fff;
+    background: #F5F5F7;
     width: 45px;
     height: 35px;
     overflow: hidden;
@@ -182,7 +254,7 @@ body {
 .door-hor:before {
     content: "";
     position: absolute;
-    background: #fff;
+    background: #F5F5F7;
     width: 2px;
     height: 31px;
     border: 1px solid #096b72;
@@ -200,7 +272,7 @@ body {
 }
 .door-sliding {
     position: absolute;
-    background: linear-gradient(to right, #096b72 0, #096b72 8%, #fff 8%, #fff 92%, #096b72 92%);
+    background: linear-gradient(to right, #096b72 0, #096b72 8%, #F5F5F7 8%, #F5F5F7 92%, #096b72 92%);
     width: 200px;
     height: 6px;
     transform: rotate(-44deg);
@@ -232,63 +304,21 @@ body {
     z-index: 10;
 }
 
-.table {
-    width: 90px;
-    height: 15px;
-    bottom: 65px;
-    right: 0px;
+.window-ver{
     position: absolute;
-    border: 2px solid #096b72;
-    transform: rotate(90deg);
-}
-.table:before {
-    content: "";
-    position: absolute;
-    border: 2px solid #096b72;
-    width: 20px;
-    height: 16px;
-    top: -20px;
-    left: 50%;
-    margin-left: -10px;
-    border-radius: 40px 40px 0 0;
-    background: linear-gradient(to bottom, transparent 0, transparent 50%, #096b72 50%, #096b72 60%, transparent 60%);
-}
-
-.corridor-chair {
-    width: 34px;
-    height: 26px;
-    bottom: 30px;
-    left: 240px;
-    border-radius: 20px 20px 0 0;
-    position: absolute;
-    border: 2px solid #096b72;
-    background: #ffc107;
-    z-index: 25;
-    transform: rotate(-120deg);
-}
-.corridor-chair:before {
-    content: "";
-    position: absolute;
-    width: 25px;
-    height: 82%;
-    border-radius: inherit;
-    background: #fff;
-    bottom: 0;
-    left: 10%;
-    border: 1px solid #096b72;
-    border-width: 1px 1px 0;
-}
-.corridor-chair:nth-child(5) {
-    transform: rotate(-35deg);
-    top: 30px;
-    left: 250px;
+	right: -6px;
+	top: 8px;
+	height: 140px;
+	border: 2px solid #096b72;
+	width: 6px;
+	background: #e2f0f1;
 }
 
 .rug {
-    width: 700px;
+    width: 710px;
     height: 100px;
     top: 35px;
-    right: 15px;
+    right: 20px;
     position: absolute;
     background: rgba(255, 193, 7, 0.25);
 }
@@ -308,10 +338,14 @@ body {
     left: 45%;
 }
 
-.icon{
-    /* position: absolute;
-    top: 50%;
+.room-6 .name{
+    position: absolute;
     left: 50%;
-    transform: translate(-50%, -50%); */
+    top: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.corridor .name {
+    left: 180px;
 }
 

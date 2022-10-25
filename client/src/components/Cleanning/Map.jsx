@@ -1,86 +1,66 @@
 import '../Cleanning/Map.css'
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import ClearIcon from '@mui/icons-material/Clear';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-import { pink, red, blue, green } from '@mui/material/colors';
+import { pink, green, deepOrange } from '@mui/material/colors';
+import { AppContext } from '../../Data';
+import DescribeText from '../DescribeText';
 
 export default function Map(){
-    const [isCleaned, setIsCleaned]= useState('false');
+    const { rooms, sendRoomCleaning} =useContext(AppContext);
 
-    const rooms = document.getElementsByClassName('room');
+    const toggleClean = event =>{
+        let id= event.currentTarget.id;
+        let clickedRoom = rooms[id-1];
+        clickedRoom.isCleaned = !clickedRoom.isCleaned;
+        sendRoomCleaning(id, clickedRoom.isCleaned);
+    }
 
-    const roomNameList = [];
-    for(let i = 0; i<rooms.length; i++) {
-        otherClassName = rooms[i].classList[1]
-        roomNameList.push(otherClassName)
+    const RenderOneRoom = (room) => {
+        const className = `room room-${room.id}`
+        return(
+        <div className={className} key={room.id} id={room.id} onClick={toggleClean}>
+            <div className="door-hor"></div>
+            <div className="window-hor"></div>
+            <div className="name">{room.roomName}</div>
+            {room.isCleaned? <ClearIcon  sx={{ fontSize: 70, color:green[700] }}/>: <ErrorOutlineIcon sx={{ fontSize: 70, color: pink[500]}}/>}
+        </div>
+        )
     }
-    console.log(roomNameList)
-    const toggleClean = () =>{
-        setIsCleaned(prev => !prev);
+
+    const RenderAllRooms = (rooms) => {
+        return rooms.map(room => RenderOneRoom(room));
     }
+
     return(
         <>
-            <div class="main-content">
-                <div onClick={toggleClean} class="room room-6">
-                    <div class="door-hor"></div>
-                    <div class="window-hor"></div>
-                    <div class="name">room 6</div>
-                    {isCleaned? <ClearIcon sx={{ fontSize: 70, color:green[700] }}/>: <ErrorOutlineIcon sx={{ fontSize: 80, color: pink[500]}}/>}
+            <div className="main-content">
+                {RenderAllRooms(rooms)} 
+
+                <div className="corridor">
+                    <div className="rug"></div>
+                    <div className="window-ver"></div>
+                    <div className="name">Corridor </div>
                 </div>
-                <div class="room room-4">
-                    <div class="door-hor"></div>
-                    <div class="window-hor"></div>
-                    <div class="name">room 4</div>
-                    {isCleaned? <ClearIcon sx={{ fontSize: 70, color:green[700] }}/>: <ErrorOutlineIcon sx={{ fontSize: 80, color: pink[500]}}/>}
+
+                <div className='reception'>
+                    <div className="rug"></div>
+                    <div className="table"></div>
+                    <div className="reception-chair"></div>
+                    <div className="reception-chair"></div>
+                    <div className='island'></div>
+                    <div className="name">reception</div>
 
                 </div>
-                <div class="room room-2">
-                    <div class="door-hor"></div>
-                    <div class="window-hor"></div>
-                    <div class="name">room 2</div>
-                    {isCleaned? <ClearIcon sx={{ fontSize: 70, color:green[700] }}/>: <ErrorOutlineIcon sx={{ fontSize: 80, color: pink[500]}}/>}
 
-                </div>
-                <div class="room room-conference">
-                    <div class="door-hor"></div>
-                    <div class="window-hor"></div>
-                    <div class="name">Conference </div>
-                    {isCleaned? <ClearIcon sx={{ fontSize: 70, color:green[700] }}/>: <ErrorOutlineIcon sx={{ fontSize: 80, color: pink[500]}}/>}
-                </div>
-                <div class="corridor">
-                    <div class="rug"></div>
-                    <div class="window-ver"></div>
-                    <div class="name">Reception </div>
-                    <div class="table"></div>
-                    <div class="corridor-chair"></div>
-                    <div class="corridor-chair"></div>
-                    <div class='island'></div>
-                </div>
-                <div class="room room-v1">
-                    <div class="door-hor"></div>
-                    <div class="window-hor"></div>
-                    <div class="name">room 5</div>
-                    {isCleaned? <ClearIcon className='icon' sx={{ fontSize: 70, color:green[700] }}/>: <ErrorOutlineIcon sx={{ fontSize: 80, color: pink[500]}}/>}
-                </div>
-                <div class="room room-v2">
-                    <div class="door-hor"></div>
-                    <div class="window-hor"></div>
-                    <div class="name">room 3</div>
-                    {isCleaned? <ClearIcon sx={{ fontSize: 70, color:green[700] }}/>: <ErrorOutlineIcon sx={{ fontSize: 80, color: pink[500]}}/>}
-                </div>
-                <div class="room room-v3">
-                    <div class="door-hor"></div>
-                    <div class="window-hor"></div>
-                    <div class="name">room 1</div>
-                    {isCleaned? <ClearIcon sx={{ fontSize: 70, color:green[700] }}/>: <ErrorOutlineIcon sx={{ fontSize: 80, color: pink[500]}}/>}
-                </div>
-                <div class="patio">
-                    <div class="door-sliding"></div>
-                    <div class="real-patio">
-                    <div class="name">Entrén</div>
+                <div className="patio">
+                    <div className="door-sliding"></div>
+                    <div className="real-patio">
+                    <div className="name">Entrén</div>
                 </div>
                 </div>
             </div>
+            <DescribeText />
         </>
     )
 }

@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Meddelandecentral.Models
 {
-    public class Todo
+    public class CreateTodo
     {
         [Key]
         public int Id { get; set; }
@@ -10,6 +10,5 @@ namespace Meddelandecentral.Models
         public int RoomId { get; set; }
         [Required]
         public string? Notis { get; set; }
-        public bool isDone { get; set; }
     }
 }

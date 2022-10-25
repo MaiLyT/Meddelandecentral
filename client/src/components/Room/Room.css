@@ -1,0 +1,96 @@
+.rooms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 5rem;
+    width: 100%;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.rooms .roomFlex{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-start;
+    align-items: center;
+    width: 20rem;
+    min-height: 20rem;
+    min-width: 200px;
+    transition: 0.5s;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.rooms .roomName{
+    font: 600 25px "Poppins", sans-serif;
+    text-transform: uppercase;
+    color: #096b72;
+    position: relative;
+    top:-3rem;
+    z-index: 30;
+}
+
+.room6 .roomName{
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.rooms .roomFlex .icon{
+    position: relative; 
+    top: 1%;
+    left: -35%;
+}
+
+.rooms .roomFlex .newNotis{
+    position: relative;
+    margin: auto;
+    width: 95%;
+    top:14%;
+    align-self: flex-end;
+    margin-bottom: 15px;
+}
+
+.rooms .roomFlex:hover{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.rooms .roomFlex .notis{
+    position: relative;
+    top:-25px;
+    margin-right: auto;
+    padding-left: 2.5rem;
+}
+
+@media screen and (max-width: 781px) {
+    .rooms{
+        gap:2rem;
+    }  
+    .rooms .roomFlex{
+        width: 80%;
+        min-height: 25rem;
+    }
+    .rooms .roomFlex .icon{
+        position: relative;
+        top:10px;
+        left: -42%;
+    }
+
+    .rooms .roomFlex .roomName{
+        position: relative;
+        top: -3rem;
+    }
+
+    .room6 .roomName{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .rooms .roomFlex{
+        width: 95%;
+    }
+}
+    

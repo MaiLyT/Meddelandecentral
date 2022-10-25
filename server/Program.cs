@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.SignalR;
-using Meddelandecentral.Models;
-using Meddelandecentral.Services;
+﻿using Meddelandecentral.Data;
 using Meddelandecentral.Hubs;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,9 +22,14 @@ services.AddCors(opt =>
             .AllowCredentials();
     });
 });
+
 services.AddDbContext<AppDbContext>(options =>
 options.UseSqlite("DataSource=Database\\app.db"));
 
+services.AddScoped<IChatRepo, ChatRepo>();
+services.AddScoped<IRoomRepo, RoomRepo>();
+services.AddScoped<ITodoRepo, TodoRepo>(); 
+services.AddHttpContextAccessor();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useContext } from "react";
 import Message from "./Message";
+import { AppContext } from "../../Data";
 
-export default function ChatWindow(props){
-            const chat = props.chat
+export default function ChatWindow(){
+    const {chat} = useContext(AppContext);
+            const currentChat = chat
                 .map(m => <Message 
                     key={Date.now() * Math.random()}
                     user={m.user}
@@ -10,7 +12,7 @@ export default function ChatWindow(props){
 
     return(
         <div>
-            {chat}
+            {currentChat}
         </div>
     )
 }
