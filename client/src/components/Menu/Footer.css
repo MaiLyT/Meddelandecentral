@@ -10,9 +10,12 @@
     left: 0;
     bottom: 0;
     padding: 10px;
-    /* background-color: #AFBCCF; */
-    
-    background: #FFEFBA;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #F5F5F7, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #F5F5F7, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    opacity: .85;
+    background: #F5F5F5;  
+    background: -webkit-linear-gradient(to bottom, #F5F5F7, #bdbdbc);  
+    background: linear-gradient(to bottom, #F5F5F7, #bdbdbc); 
+}
+
+.footer .icon{
+    transition: 0.5s;
 }

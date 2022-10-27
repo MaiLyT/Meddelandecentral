@@ -10,6 +10,7 @@ export default function Data(props){
     const [rooms, setRooms] = useState([]);
     const latestChat = useRef(null);
     const latestRooms = useRef(null);
+    const colorList = ['#F7DA66', '#F5AFA3', '#75D7F0', '#85E0A3', '#80CAFF', '#AFBCCF']
 
     latestChat.current = chat;
     latestRooms.current = rooms;
@@ -18,7 +19,7 @@ export default function Data(props){
         getRoomsInfo(setRooms);
 
         const connection = new HubConnectionBuilder()
-            .withUrl('https://localhost:5001/hubs/chat')
+            .withUrl('https://localhost:5001/hubs')
             .withAutomaticReconnect()
             .build();
 
@@ -149,6 +150,7 @@ export default function Data(props){
                     sendRoomCleaning,
                     sendUpdateTodo,
                     sendNewTodo,
+                    colorList,
                 }}
             >
                 {props.children}

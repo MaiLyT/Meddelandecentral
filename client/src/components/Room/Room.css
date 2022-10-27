@@ -46,7 +46,7 @@
 .rooms .roomFlex .newNotis{
     position: relative;
     margin: auto;
-    width: 95%;
+    width: 100%;
     top:14%;
     align-self: flex-end;
     margin-bottom: 15px;
@@ -91,6 +91,11 @@
 @media screen and (max-width: 600px) {
     .rooms .roomFlex{
         width: 95%;
+    }
+    .rooms .roomFlex .icon{
+        position: relative; 
+        top: 0.5%;
+        left: -40%;
     }
 }
     

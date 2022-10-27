@@ -1,10 +1,11 @@
 import '../Cleanning/Map.css'
-import { useState, useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import ClearIcon from '@mui/icons-material/Clear';
-import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-import { pink, green, deepOrange } from '@mui/material/colors';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import { pink, green, blue, blueGrey } from '@mui/material/colors';
 import { AppContext } from '../../Data';
 import DescribeText from '../DescribeText';
+
 
 export default function Map(){
     const { rooms, sendRoomCleaning} =useContext(AppContext);
@@ -23,7 +24,10 @@ export default function Map(){
             <div className="door-hor"></div>
             <div className="window-hor"></div>
             <div className="name">{room.roomName}</div>
-            {room.isCleaned? <ClearIcon  sx={{ fontSize: 70, color:green[700] }}/>: <ErrorOutlineIcon sx={{ fontSize: 70, color: pink[500]}}/>}
+            {room.isCleaned? 
+                <CheckCircleOutlineIcon sx={{fontSize: 70, color: green[700]}}/>
+                :<ClearIcon sx={{fontSize: 70, color: pink[400]}}/>
+            }
         </div>
         )
     }

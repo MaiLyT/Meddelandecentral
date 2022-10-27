@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.SignalR;
 using Meddelandecentral.Models;
 namespace Meddelandecentral.Hubs;
-
-
 public interface IHubClient
     {
         Task ReceiveMessage(ChatMessage msg);

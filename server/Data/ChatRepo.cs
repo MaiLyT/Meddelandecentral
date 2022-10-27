@@ -1,6 +1,4 @@
 using Meddelandecentral.Models;
-using Meddelandecentral.Data;
-using Microsoft.EntityFrameworkCore;
 
 namespace Meddelandecentral.Data
 {
